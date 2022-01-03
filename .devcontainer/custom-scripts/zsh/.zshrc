@@ -113,5 +113,4 @@ alias nvim="~/nvim.appimage"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # MINE
-cd ~
 set -o vi
