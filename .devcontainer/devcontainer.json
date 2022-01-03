@@ -12,6 +12,7 @@
 	"settings": {},
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
+		"seatonjiang.gitmoji-vscode",
 		"benjaminadk.emojis4git",
 		"formulahendry.code-runner",
 		"streetsidesoftware.code-spell-checker",
