@@ -1,0 +1,5 @@
+# Configure webassembly ...
+COPY custom-scripts/webassembly/* /tmp/library-scripts/
+RUN /bin/bash /tmp/library-scripts/configure-wasm.sh "${USERNAME}" \
+    && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts/
+

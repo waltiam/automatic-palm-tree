@@ -1,0 +1,40 @@
+{
+	"name": "Rust WebAssembly",
+	"build": {
+		"dockerfile": "Dockerfile",
+		// Update 'VARIANT' to pick an Ubuntu version: hirsute, focal, bionic
+		// Use hirsute or bionic on local arm64/Apple Silicon.
+		"args": {
+			"VARIANT": "focal"
+		}
+	},
+	// Set *default* container specific settings.json values on container create.
+	"settings": {},
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"formulahendry.code-runner",
+		"streetsidesoftware.code-spell-checker",
+		"zokugun.explicit-folding",
+		"mhutchie.git-graph",
+		"eamodio.gitlens",
+		"vtrois.gitmoji-vscode",
+		"slevesque.vscode-hexdump",
+		"ms-vscode.makefile-tools",
+		"hoovercj.vscode-power-mode",
+		"esbenp.prettier-vscode",
+		"redhat.vscode-yaml",
+		"github.vscode-pull-request-github",
+		"dtsvet.vscode-wasm",
+		"ritwickdey.liveserver"
+	],
+	"mounts": [
+		"source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
+		"source=${localEnv:HOME}/.gnupg,target=/home/vscode/.gnupg,type=bind,consistency=cached",
+	],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "sh ./.devcontainer/custom-scripts/git/configure-git.sh",
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode"
+}

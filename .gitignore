@@ -1,0 +1,6 @@
+wabt/
+bin/
+
+*.wasm
+
+.vscode/
