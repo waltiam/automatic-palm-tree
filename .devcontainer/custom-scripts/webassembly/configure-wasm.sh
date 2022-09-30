@@ -9,6 +9,7 @@ mkdir build
 cd build
 cmake ..
 cmake --build .
+cmake --install .
 
-mv /tmp/wabt/bin /usr/bin/wabt
-cp /tmp/library-scripts/wabt-path.sh /etc/profile.d/
+# mv /tmp/wabt/bin /usr/bin/wabt
+# cp /tmp/library-scripts/wabt-path.sh /etc/profile.d/
